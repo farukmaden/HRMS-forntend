@@ -3,26 +3,14 @@ import CandidateList from '../pages/CandidateList'
 import EmployerList from '../pages/EmployerList'
 import JobAdvertisementList from '../pages/JobAdvertisementList'
 import { Grid, GridColumn } from "semantic-ui-react";
+import JobAdvertisementAdd from '../pages/JobAdvertisementAdd';
+import { Route } from 'react-router-dom';
 
 export default function Content() {
     return (
         <div>
             <Grid>
-                <Grid.Row>
-                    <GridColumn size={14}>
-                        <CandidateList />
-                    </GridColumn>
-                </Grid.Row>
-                <Grid.Row>
-                    <GridColumn size={14}>
-                        <EmployerList />
-                    </GridColumn>
-                </Grid.Row>
-                <Grid.Row>
-                    <GridColumn size={14}>
-                        <JobAdvertisementList />
-                    </GridColumn>
-                </Grid.Row>
+                
             </Grid>
         </div>
     )
