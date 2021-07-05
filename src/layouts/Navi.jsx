@@ -4,9 +4,12 @@ import { Button } from 'semantic-ui-react'
 import SignedOut from './SignedIn'
 import SignedIn from './SignedOut'
 import { useHistory } from "react-router";
+import FavoriteJobAdversiment from './FavoriteJobAdversiment'
+import { useSelector } from 'react-redux'
 
 
 export default function Navi() {
+    const {favoriteItems} = useSelector(state => state.favorite)
     const [isAuthenticated, setIsAuthenticated] = useState(false)
 
     function handleSignOut(params) {
@@ -36,9 +39,11 @@ export default function Navi() {
                     />
                    
                     <Menu.Item position="right">
+                     <FavoriteJobAdversiment/>
                         {isAuthenticated ? <SignedOut signOut={handleSignOut} />:<SignedIn signIn={handleSignIn} />  }
                         
                     </Menu.Item>
+                   
                 </Container>
 
             </Menu>

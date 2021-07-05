@@ -36,12 +36,7 @@ export default function JobAdvertisementAdd() {
         },
         validationSchema: JobAdvertisementAdd,
         onSubmit: (values) => {
-
-            // formik.values.city.id = parseInt(values.city.id),
-            // formik.values.jobTitle.id = parseInt(values.jobTitle.id)
-            // formik.values.typeOfWork.id = parseInt(values.typeOfWork.id)
-            // formik.values.workingTime.id = parseInt(values.workingTime.id)
-            formik.values.employerId=62
+            formik.values.employerId=63
             console.log(values)
             jobAdvertisementService.addjobAdvertisements(values).then(result => console.log(result.data.data))
         },
@@ -98,7 +93,7 @@ export default function JobAdvertisementAdd() {
                 <Card.Content>
                     <Form onSubmit={formik.handleSubmit}>
                         <Form.Field>
-                            <Label basic className="float-left my-1">Eklemek istedğiniz pozisyonu seçin</Label>
+                            <Label basic className="float-left my-1" color="teal">Eklemek istedğiniz pozisyonu seçin</Label>
                             <Dropdown clearable
                                 item
                                 placeholder="Pozisyon"
@@ -114,7 +109,7 @@ export default function JobAdvertisementAdd() {
                             )}
                         </Form.Field>
                         <Form.Field>
-                            <Label basic className="float-left my-1">Şehir seçiniz</Label>
+                            <Label basic className="float-left my-1" color="teal">Şehir seçiniz</Label>
                             <Dropdown clearable
                                 item
                                 placeholder="Şehirler"
@@ -130,7 +125,7 @@ export default function JobAdvertisementAdd() {
                             )}
                         </Form.Field>
                         <Form.Field>
-                            <Label basic className="float-left my-1">Çalışma türü seçiniz</Label>
+                            <Label basic className="float-left my-1" color="teal">Çalışma türü seçiniz</Label>
                             <Dropdown clearable
                                 item
                                 placeholder="Çalışma türü"
@@ -148,7 +143,7 @@ export default function JobAdvertisementAdd() {
                             )}
                         </Form.Field>
                         <Form.Field>
-                            <Label basic className="float-left my-1">Çalışma zamanı seçiniz</Label>
+                            <Label basic className="float-left my-1" color="teal">Çalışma zamanı seçiniz</Label>
                             <Dropdown clearable
                                 item
                                 placeholder="Çalışma zamanı"
@@ -167,8 +162,8 @@ export default function JobAdvertisementAdd() {
                         </Form.Field>
                         <Form.Field>
                             <Grid>
-                                <Grid.Column width={8}>
-                                    <Label basic className="float-left my-1">Maaş aralığını giriniz</Label>
+                                <Grid.Column width={16}>
+                                    <Label basic className="float-left my-1 " color="teal">Maaş aralığını giriniz</Label>
                                     <Form.Input
                                         style={{ width: "100%" } }
                                         type="number"
@@ -188,7 +183,7 @@ export default function JobAdvertisementAdd() {
                         <Form.Field>
                             <Grid>
                                 <Grid.Column width={8}>
-                                    <Label basic className="float-left my-1">Açık Pozisyon Adedi Girin: </Label>
+                                    <Label basic className="float-left my-1" color="teal">Açık Pozisyon Adedi Girin: </Label>
                                     <Form.Input
                                         style={{ width: "100%" }}
                                         id="jobPostingCount"
@@ -202,7 +197,7 @@ export default function JobAdvertisementAdd() {
                                     )}
                                 </Grid.Column>
                                 <Grid.Column width={8}>
-                                    <Label basic className="float-left my-1">Son Başvuru Tarihi Seçin:</Label>
+                                    <Label basic className="float-left my-1" color="teal">Son Başvuru Tarihi Seçin:</Label>
                                     <Form.Input
                                         style={{ width: "100%" }}
                                         type="date"
@@ -222,8 +217,9 @@ export default function JobAdvertisementAdd() {
                                 </Grid.Column>
                             </Grid>
                         </Form.Field>
+                        
                         <Form.Field>
-                        <Label basic className="float-left my-1">Açıklama Girin:</Label>
+                        <Label basic className="float-left my-1" color="teal">Açıklama Girin:</Label>
                             <TextArea
                                 placeholder="Açıklama"
                                 style={{ minHeight: 100 }}
@@ -244,6 +240,7 @@ export default function JobAdvertisementAdd() {
                          type="submit" 
                          disabled={!formik.dirty || formik.isSubmitting}
                          className="float-left"
+                         color="teal"
                          >
                              Oluştur
                         </Button>
